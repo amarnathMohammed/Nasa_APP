@@ -9,32 +9,40 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-oxs-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 }
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 #root {
   min-height: 100vh;
   display: flex;
-  display: relative;
+  position: relative; 
 }
 
 .imgContainer {
   display: flex;
-  flex-direction: column;
-  max-height: 100vh;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 100%;   
+  flex-direction: column; 
 }
 
-.bgImage {
-  width: 100%;
-  height: 100%;
-  flex: 1;
-  object-fit: cover;
+.bgImage, .bgVideo {
+  max-width: 100%; 
+  max-height: 100%; 
+  width: auto; 
+  height: auto; 
+  display: block;
 }
+
+
+
 footer {
   position: fixed;
   bottom: 0;
@@ -44,12 +52,12 @@ footer {
   justify-content: space-between;
   gap: 1rem;
   padding: 1rem;
-  padding: 1rem;
 }
 
 footer h2 {
   font-size: 1.4rem;
 }
+
 footer div {
   display: flex;
   flex-direction: column;
@@ -57,7 +65,7 @@ footer div {
 }
 
 footer h1 {
-  font-size: 0.9;
+  font-size: 0.9rem;
   font-weight: 200;
 }
 
@@ -74,6 +82,7 @@ footer button {
 footer button i {
   font-size: 1.3rem;
 }
+
 footer button:hover {
   opacity: 0.7;
 }
@@ -84,6 +93,7 @@ footer button:hover {
   z-index: -1;
   background: linear-gradient(to top, #030615, rgba(255, 255, 255, 0));
 }
+
 .sidebar {
   position: fixed;
   inset: 0;
@@ -91,12 +101,14 @@ footer button:hover {
   flex-direction: column;
   z-index: 10;
 }
+
 .bgOverlay {
   position: absolute;
   inset: 0;
   background: #030615;
   opacity: 0.6;
 }
+
 .sidebarContent {
   z-index: 15;
   position: relative;
@@ -112,7 +124,7 @@ footer button:hover {
   background: #030615;
 }
 
-.sidebarContent h2{
+.sidebarContent h2 {
   font-weight: 200;
   font-size: 1.4rem;
 }
@@ -121,6 +133,7 @@ footer button:hover {
   flex: 1;
   overflow-y: auto;
 }
+
 .sidebarContent button {
   background: transparent;
   color: white;
@@ -131,6 +144,7 @@ footer button:hover {
   transition-duration: 200ms;
   padding: 1rem 0;
 }
+
 .sidebarContent button:hover {
   opacity: 0.7;
 }
@@ -140,13 +154,13 @@ footer button:hover {
   font-weight: 200;
 }
 
-.descriptionContainer{
+.descriptionContainer {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 
-.loadingState{
+.loadingState {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,10 +174,10 @@ footer button:hover {
 }
 
 @keyframes spin {
-  from{
+  from {
     transform: rotate(0deg);
   }
-  to{
+  to {
     transform: rotate(360deg);
   }
 }
